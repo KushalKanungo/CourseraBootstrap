@@ -42,8 +42,8 @@
                             <span class="fa fa-address-card fa-lg"></span> Contact</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                <span class="navbar-text" id="loginButton">
+                    <a >
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -186,10 +186,10 @@
                 </div>
 
                 <div class="col-12 col-sm align-self-center">
-                    <button type="button" class="btn btn-sm btn-warning col-12 py-2">
-                        <a data-toggle="modal" data-target="#reserveModal">
-                            Reserve Table
-                        </a>
+                    <button type="button" class="btn btn-sm btn-warning col-12 py-2" id="reserveButton">
+
+                        Reserve Table
+
 
                     </button>
                 </div>
@@ -400,7 +400,7 @@
 
     <script>
         $(document).ready(function () {
-            $('#mycarousel').carousel({ interval: 500 });
+            $('#mycarousel').carousel({ interval: 2000 });
 
             $('#carouselButton').click(function () {
                 if ($('#carouselButton').children('span').hasClass('fa-pause')) {
@@ -418,6 +418,16 @@
 
 
         })
+
+        $('#reserveButton').click(function () {
+            $('#reserveModal').modal('toggle')
+        })
+
+        $('#loginButton').click(() => {
+            $('#loginModal').modal('toggle')
+        })
+
+
     </script>
 
 </body>
